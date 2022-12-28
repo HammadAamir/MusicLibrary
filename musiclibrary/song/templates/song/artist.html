@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Artists</h1>
+
+    {%for item in artistList%}
+    <ul>
+
+        <li>{{ item.name }}</li>
+        <li>{{item.birth_year}}{{ item.birth_year | pluralize:' ,s'}}</li>
+    </ul>
+    {%endfor%}
+
+</body>
+</html>
