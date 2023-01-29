@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from song.views import artist
+from account.views import signup
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('say-hello/', views.hello_world),
-    path('', views.home),
+    path('signup/', signup),
+    path('', views.home, name="home"),
     # path('home', include('library.urls')),
     path('artist', artist),
 ]
+urlpatterns+=staticfiles_urlpatterns()
